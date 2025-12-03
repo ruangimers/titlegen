@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator Prompt Judul Viral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased font-['Inter']">
+    <div class="min-h-screen bg-gradient-to-br from-indigo-50 via-slate-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Header -->
+        <header class="text-center mb-10">
+          <div class="inline-flex items-center justify-center p-3 bg-indigo-600 rounded-2xl shadow-lg mb-4">
+            <!-- Sparkles Icon -->
+            <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+          </div>
+          <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+            Generator Prompt <span class="text-indigo-600">Judul Powerful</span>
+          </h1>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Buat prompt ChatGPT yang terstruktur khusus untuk menghasilkan judul produk digital yang viral dan solutif.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-12">
+          
+          <!-- Left Column: Input Form -->
+          <div class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+            <div class="p-6 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+              <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <!-- Terminal Icon -->
+                <svg class="h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3" />
+                </svg>
+                Spesifikasi Judul
+              </h2>
+              <span class="text-xs font-semibold px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full">Input Data</span>
+            </div>
+            
+            <form id="promptForm" class="p-6 space-y-2">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Product Type -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Jenis Produk <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select id="productType" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800 appearance-none cursor-pointer">
+                      <option value="" disabled selected>Pilih opsi...</option>
+                      <option value="E-book">E-book</option>
+                      <option value="Kelas Online / Course">Kelas Online / Course</option>
+                      <option value="Webinar">Webinar</option>
+                      <option value="Checklist / Template">Checklist / Template</option>
+                      <option value="Newsletter">Newsletter</option>
+                      <option value="Konten Media Sosial (Reels/TikTok)">Konten Media Sosial (Reels/TikTok)</option>
+                      <option value="Artikel Blog">Artikel Blog</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                      <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Target Audiens <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="targetAudience" placeholder="Contoh: Ibu baru, Programmer pemula" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800" />
+                </div>
+              </div>
+
+              <!-- Problem List -->
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-slate-700 mb-1">
+                  Daftar Problem (satu per baris) <span class="text-red-500">*</span>
+                </label>
+                <textarea id="problemList" rows="4" placeholder="Contoh:&#10;- Sulit menurunkan berat badan&#10;- Tidak punya waktu olahraga&#10;- Diet selalu gagal" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800"></textarea>
+                <p class="text-xs text-slate-500 mt-1">Tuliskan masalah utama yang dihadapi audiens Anda.</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Title Style -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Gaya Judul <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select id="titleStyle" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800 appearance-none cursor-pointer">
+                      <option value="" disabled selected>Pilih opsi...</option>
+                      <option value="Direct & Jelas">Direct & Jelas</option>
+                      <option value="Rangsang Rasa Ingin Tahu">Rangsang Rasa Ingin Tahu</option>
+                      <option value="Berbasis Manfaat">Berbasis Manfaat</option>
+                      <option value="Ada Rasa Urgensi">Ada Rasa Urgensi</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                      <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tone -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Nada/Tone <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <select id="tone" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800 appearance-none cursor-pointer">
+                      <option value="" disabled selected>Pilih opsi...</option>
+                      <option value="Natural & Membumi">Natural & Membumi</option>
+                      <option value="Lebih Authoritative">Lebih Authoritative</option>
+                      <option value="Akrab & Hangat">Akrab & Hangat</option>
+                      <option value="Sedikit Provokatif">Sedikit Provokatif</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                      <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Benefit Angles -->
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-slate-700 mb-1">
+                  Pilih Sudut Manfaat <span class="text-red-500">*</span>
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+                  <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" name="benefitAngles" value="Tambah Penghasilan" class="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500 checkbox-angle" />
+                    <span class="text-sm text-slate-700 select-none">Tambah Penghasilan</span>
+                  </label>
+                  <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" name="benefitAngles" value="Hemat Pengeluaran" class="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500 checkbox-angle" />
+                    <span class="text-sm text-slate-700 select-none">Hemat Pengeluaran</span>
+                  </label>
+                  <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" name="benefitAngles" value="Percepat Proses" class="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500 checkbox-angle" />
+                    <span class="text-sm text-slate-700 select-none">Percepat Proses</span>
+                  </label>
+                </div>
+                <p class="text-xs text-slate-500 mt-1">Boleh pilih lebih dari satu.</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Title Count -->
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Jumlah Judul <span class="text-red-500">*</span>
+                  </label>
+                  <input type="number" id="titleCount" value="10" placeholder="10" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800" />
+                </div>
+                 <!-- Char Limit -->
+                 <div class="mb-4">
+                  <label class="block text-sm font-medium text-slate-700 mb-1">
+                    Batas Karakter (Opsional)
+                  </label>
+                  <input type="text" id="charLimit" placeholder="Contoh: 60, atau 'Pendek'" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800" />
+                </div>
+              </div>
+
+              <!-- Forbidden Words -->
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-slate-700 mb-1">
+                  Larangan Kata/Jargon (Opsional)
+                </label>
+                <input type="text" id="forbiddenWords" placeholder="Contoh: Murah, Cepat Kaya, Instan" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-white text-slate-800" />
+              </div>
+
+              <div class="pt-4">
+                <button
+                  type="button"
+                  id="generateBtn"
+                  disabled
+                  class="w-full py-3 px-6 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg bg-slate-300 text-slate-500 cursor-not-allowed"
+                >
+                  <span id="btnIcon" class="flex items-center gap-2">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                    Generate Prompt ChatGPT
+                  </span>
+                  <span id="loadingIcon" class="hidden flex items-center gap-2">
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sedang Meracik Prompt...
+                  </span>
+                </button>
+                <p id="errorMsg" class="text-center text-xs text-rose-500 mt-2">Harap lengkapi kolom yang bertanda bintang (*).</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Column: Output Display -->
+          <div class="flex flex-col h-full">
+            <div id="resultContainer" class="bg-white rounded-2xl shadow-xl border border-slate-100 flex-grow flex flex-col transition-all duration-500 opacity-90 translate-y-0">
+              <div class="p-6 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                  <!-- MessageSquare Icon -->
+                  <svg class="h-5 w-5 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 4.863 4.863 0 00-1.103-.06c-2.422.25-4.63.5-6.643.75m10.845-8.335A2.25 2.25 0 0017.25 2.25h-9a2.25 2.25 0 00-2.25 2.25v6.333c0 .506.092 1.01.272 1.482A2.25 2.25 0 008.25 15.75h2.25" />
+                  </svg>
+                  Hasil Prompt
+                </h2>
+                <span class="text-xs font-semibold px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">Siap Copy</span>
+              </div>
+
+              <div class="p-6 flex-grow flex flex-col relative min-h-[400px]">
+                <!-- Empty State -->
+                <div id="emptyState" class="flex-grow flex flex-col items-center justify-center text-slate-400 p-8 text-center border-2 border-dashed border-slate-200 m-6 rounded-xl">
+                  <svg class="h-12 w-12 text-slate-200 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                  </svg>
+                  <p>Isi formulir di sebelah kiri dan klik tombol Generate untuk melihat hasilnya di sini.</p>
+                </div>
+
+                <!-- Result Content (Hidden by default) -->
+                <div id="resultContent" class="hidden h-full flex flex-col">
+                  <div class="absolute top-4 right-4 z-10">
+                    <button
+                      id="copyBtn"
+                      class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:text-indigo-600"
+                    >
+                      <span id="copyText">Copy Prompt</span>
+                      <!-- Copy Icon -->
+                      <svg id="copyIcon" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5" />
+                      </svg>
+                      <!-- Check Icon (Hidden) -->
+                      <svg id="checkIcon" class="hidden h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex-grow flex flex-col h-full">
+                    <label class="block text-sm font-medium text-slate-500 mb-2">
+                      Salin teks di bawah ini dan paste ke ChatGPT:
+                    </label>
+                    <textarea
+                      id="outputPrompt"
+                      readonly
+                      class="w-full h-full min-h-[350px] p-4 bg-slate-50 rounded-xl border border-slate-200 text-slate-800 font-mono text-sm leading-relaxed focus:outline-none resize-none"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="bg-indigo-900 rounded-2xl p-8 text-white shadow-xl">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-indigo-800 rounded-lg">
+              <!-- Lightbulb Icon -->
+              <svg class="h-6 w-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-1.946c0-1.18.91-2.164 2.09-2.201 3.566-.112 6.38-3.057 6.38-6.645a6.75 6.75 0 10-13.5 0c0 3.588 2.813 6.533 6.38 6.645 1.18.037 2.09 1.022 2.09 2.201V18" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 21h6m-3-3v3" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Tips Penggunaan Optimal</h3>
+              <ul class="space-y-2 text-indigo-100">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                  <span>Masukkan <strong>1 problem per baris</strong> untuk kejelasan konteks.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                  <span>Pilih <strong>minimal satu sudut manfaat</strong> yang paling relevan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                  <span>Atur <strong>Jumlah Judul / Problem</strong> agar output ringkas sesuai kebutuhan.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                  <span>Gunakan <strong>Larangan Kata</strong> untuk menghindari kata-kata klise atau pasaran.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                  <span>Output berupa prompt siap pakai untuk AI (ChatGPT/Gemini). <strong>Copy–paste dan jalankan</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
