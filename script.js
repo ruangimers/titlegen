@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 // Initialize Gemini
 // Note: In a production static site, you must handle API keys securely (e.g. backend proxy).
 // For this environment/preview, we use process.env.API_KEY as mandated.
-const apiKey = process.env.API_KEY;
+const apiKey = "";
 const ai = new GoogleGenAI({ apiKey: apiKey });
 
 // --- Configuration Constants ---
